@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>POS Print Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-link { 
+            display: inline-block; 
+            margin: 10px; 
+            padding: 15px 25px; 
+            background: #007bff; 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 5px;
+        }
+        .test-link:hover { background: #0056b3; }
+        .instructions { 
+            background: #f8f9fa; 
+            padding: 20px; 
+            border-radius: 5px; 
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>POS Print Functionality Test</h1>
+    
+    <div class="instructions">
+        <h3>Test Instructions:</h3>
+        <p>Click the links below to test receipt and invoice printing:</p>
+        <ul>
+            <li><strong>Receipt:</strong> Should open print dialog immediately</li>
+            <li><strong>Invoice:</strong> Should open print dialog immediately</li>
+            <li><strong>Expected Behavior:</strong> Print dialog opens, page loads correctly, no pop-up/close issues</li>
+            <li><strong>Fixed Issues:</strong> Removed duplicate window.print() calls, proper Livewire layout usage</li>
+        </ul>
+    </div>
+    
+    <h3>Test Links:</h3>
+    <a href="/pos/receipt/8c5273bc-79b3-4510-b940-98a49dc20b24" target="_blank" class="test-link">
+        🧾 Test Receipt Print
+    </a>
+    
+    <a href="/pos/invoice/8c5273bc-79b3-4510-b940-98a49dc20b24" target="_blank" class="test-link">
+        📄 Test Invoice Print
+    </a>
+    
+    <div class="instructions" style="margin-top: 30px;">
+        <h3>What Was Fixed:</h3>
+        <ul>
+            <li>✅ Removed duplicate <code>window.print()</code> calls from individual views</li>
+            <li>✅ Fixed Livewire component view paths (receipt.blade.php → pos.print.receipt)</li>
+            <li>✅ Fixed Livewire component view paths (invoice-content.blade.php → pos.print.invoice)</li>
+            <li>✅ Added proper <code>#[Layout('layouts.print')]</code> attributes</li>
+            <li>✅ Print layout handles automatic printing with proper delay</li>
+        </ul>
+    </div>
+</body>
+</html>

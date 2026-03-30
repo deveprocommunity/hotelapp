@@ -1,0 +1,6 @@
+Array
+(
+    [revenue] => 0
+    [expenses] => 0
+    [net_profit] => 0
+)
